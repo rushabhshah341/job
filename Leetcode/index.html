@@ -1,0 +1,64 @@
+<html>
+<script>
+    function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+    }
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1925469807533319',
+            cookie: true,
+            xfbml: true,
+            version: 'v3.1'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<head>
+    <title>Title</title>
+</head>
+
+<body>
+    <h1>
+        My APP
+    </h1>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src =
+                'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1&appId=1925469807533319&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-login-button" data-width="150" data-max-rows="1" data-size="medium" data-button-type="login_with"
+        data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+
+</body>
+
+</html>
