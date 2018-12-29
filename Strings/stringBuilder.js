@@ -8,19 +8,19 @@ StringBuilder.append = function (value) {
     if(value) {
         this.strings.push(value);
     }
-}
+};
 
 // Clears the string buffer
 StringBuilder.clear = function ()
 {
     this.strings.length = 1;
-}
+};
 
 // Converts this instance to a String.
 StringBuilder.toString = function ()
 {
     return this.strings.join("");
-}
+};
 
 
 var s = new StringBuilder();
